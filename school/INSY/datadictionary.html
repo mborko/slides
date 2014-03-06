@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>Data Dictionary</title>
+
+<meta name="description" content="Data Dictionary">
+<meta name="author" content="Unknown" >
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/reveal.min.css">
+<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+if( window.location.search.match( /print-pdf/gi ) ) {
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = 'css/print/pdf.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+}
+</script>
+
+<!--[if lt IE 9]>
+                <script src="lib/js/html5shiv.js"></script>
+                <![endif]-->
+<style>
+.reveal figure {
+  position: absolute;
+  display: table;
+  margin: 0;
+}
+.reveal figcaption {
+  caption-side: bottom;
+  display: table-caption; 
+  margin-top: -24px;
+  padding: 10px 10px;
+  text-align: left;
+  line-height: 1.2em;
+  color: lightgrey;
+  font-size: 16px;
+  background: #000000; /* Fallback color */
+  background: rgba(0, 0, 0, .6);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+.reveal section img {
+  border: none;
+}
+</style>
+</head>
+
+<body>
+<div class="reveal">
+  <div class="slides">
+    <p style="font-size: 18px; color: lightgrey; text-align: left; position: fixed; left: -480px; top: 350px;">
+    INSY - Data Dictionary</p>
+    <p style="font-size: 18px; color: lightgrey; text-align: right; padding-top: 350px; padding-right: 480px; float: right;">
+    michael@borko.at <img src="http://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" alt="http://creativecommons.org/licenses/by-nc-sa/4.0/"/></p>
+
+    <section>
+      <h1>Data<br>Dictionary</h1>
+      <br>
+      <h3>Eine Einführung in den<br>System Catalog</h3>
+    </section>
+
+    <section>
+      <h1>Aufbau DBMS</h1>
+      <figure style="position: absolute; z-index: -1; left: 227px; top: 136px;" class="absolute-element">
+        <img style="width: 506px; height: 428px; max-height: none; max-width: none;" 
+        src="images/db_konzept.jpg">
+        <figcaption>Datenbankmanagementsystem<br>
+        Quelle: <a href="http://www.kreissl.info/pics/images/db_konzept.jpg">www.kreissl.info</a></figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Metadaten</h2>
+      <p><i>Daten über Daten</i></p>
+      <br>
+      <div align="left"><p>
+        Informationen über Relationen
+        <ul>
+          <li>Namen von Relationen</li>
+          <li>Namen und Typen der Attribute der Relationen</li>
+          <li>Namen und Definitionen von Views</li>
+          <li>Integritätsbedingungen</li>
+        </ul>
+      </p></div>
+      <br>
+      <div align="left"><p>
+        Statistische und deskriptive Daten
+        <ul>
+          <li>Anzahl der Tupel in jeder Relation</li>
+        </ul>
+      </p></div>
+    </section>
+
+    <section>
+      <h2>Metadaten</h2>
+      <p><i>Daten über Daten</i></p>
+      <br>
+      <p align="left">
+      Benutzer und Accountinginformationen
+      </p>
+      <br>
+      <div align="left"><p>
+        Informationen über die physische Datenorganisation
+        <ul>
+          <li>Wie ist die Relation gespeichert (sequentiell, hash, ...)</li>
+          <li>Physischer Speicherort der Relation</li>
+          <ul>
+            <li>Betriebssystem</li>
+            <li>Plattenadressen der Blöcke, die die Records einer Relation enthalten</li>
+          </ul>
+        </ul>
+      </p></div>
+      <br>
+      <p align="left">
+      Information über Indizes
+      </p>
+    </section>
+
+    <section>
+      <h2>Wo findet man das DD?</h2>
+      <br>
+      <p align="left"><i>Zwei Möglichkeiten zur Speicherung der Katalog Struktur ...</i></p>
+      <br>
+      <ol>
+        <li>Spezialisierte Datenstrukturen für effizienten Zugriff</li>
+        <li>Menge von Relationen basierend auf den existierenden Systemmöglichkeiten</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Wo findet man das DD?</h2>
+      <br>
+      <p><b>Eine mögliche Repräsentation:</b></p>
+      <div align="left"><p>
+        Relation-metadata =
+        <i>(relation-name, number-of-attributes, storage-organization, location)</i></p><p>
+        Attribute-metadata =
+        <i>(attribute-name, relation-name, domain-type, position, length)</i></p><p>
+        User-metadata =
+        <i>(user-name, encrypted-password, group)</i></p><p>
+        Index-metadata =
+        <i>(index-name, relation-name, index-type, index-attributes)</i></p><p>
+        View-metadata =
+        <i>(view-name, definition)</i>
+      </p></div>
+    </section>
+
+    <section>
+      <h2>Wie spricht man mit dem DD?</h2>
+      <p><i>Unterschiede zwischen MySQL und PostgreSQL</i></p>
+      <br>
+      <div align="left"><p>
+        <ol>
+          <li>
+          MySQL bietet nur SELECT-Zugriff -
+          INFORMATION_SCHEMA
+          <ul>
+            <li>Keine direkte Möglichkeit einer Veränderung</li>
+            <li>Einsicht für alle Benutzer</li>
+          </ul>
+          </li>
+          <br>
+          <li>Postgres bietet die Möglichkeit einer Veränderung - pg_*</li>
+          <ul>
+            <li>Veränderung von Performance?</li>
+            <li>Eigentlich ein neues DBMS?</li>
+          </ul>
+        </ol>
+      </p></div>
+    </section>
+
+    <section class="center">
+      <h2>PostgreSQL<br>System Catalog</h2>
+      <p style="font-size: 14px; line-height: 1em;">
+        “The system catalogs are the place where a relational database management system stores schema metadata, such as information about tables and columns, and internal bookkeeping information. PostgreSQL's system catalogs are regular tables. You can drop and recreate the tables, add columns, insert and update values, and <font color="red">severely mess up your system that way.</font> Normally, one should not change the system catalogs by hand, there are always SQL commands to do that. (For example, CREATE DATABASE inserts a row into the pg_database catalog — and actually creates the database on disk.) There are some exceptions for particularly esoteric operations, such as adding index access methods.”
+      </p>
+      <p>
+      <font style="font-size: 18px;">
+      Quelle: <a href="http://www.postgresql.org/docs/9.3/static/catalogs.html" target="_blank">http://www.postgresql.org/docs/9.3/static/catalogs.html</a>
+    </font>
+      </p>
+
+    </section>
+
+    <section>
+      <h3>Quellen</h3>
+      <div align="left"><p>
+        <em>webpages</em><br>        
+        <a href="http://dev.mysql.com/tech-resources/articles/" target="_blank">http://dev.mysql.com/tech-resources/articles/</a><br>
+        <a href="http://downloads.mysql.com/docs/mysql-infoschema-excerpt-5.1-en.pdf" target="_blank">http://downloads.mysql.com/docs/mysql-infoschema-excerpt-5.1-en.pdf</a><br>
+        <a href="http://dev.mysql.com/doc/refman/5.6/en/information-schema.html" target="_blank">http://dev.mysql.com/doc/refman/5.6/en/information-schema.html</a><br>
+        <a href="http://www.postgresql.org/docs/9.3/static/catalogs.html" target="_blank">http://www.postgresql.org/docs/9.3/static/catalogs.html</a><br>
+        <a href="http://www3.in.tum.de/teaching/bookDBMSeinf/index.shtml?lang=de" target="_blank">http://www3.in.tum.de/teaching/bookDBMSeinf/index.shtml?lang=de</a><br>
+      </p></div>
+    </section>
+
+    <section>
+      <h3>Quellen</h3>
+      <div align="left"><p>
+        <em>books</em><br>
+        A.Heuer, G.Saake, K.-U. Sattler; "Datenbanken kompakt"; 2002; mitp-Verlag<br>
+        A.Kemper; "Datenbanksysteme - Eine Einführung"; 2004 5.Auflage, Oldenbourg Verlag
+      </p></div>
+    </section>
+
+  </div>
+</div>
+
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+controls: true,
+progress: true,
+history: true,
+center: false,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+// Parallax scrolling
+//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+//parallaxBackgroundSize: '2100px 900px',
+parallaxBackgroundImage: '../../images/wallpaper_blue_grid.jpg',  //original-size=1920x1080
+parallaxBackgroundSize: '1920px 1080px',
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+]
+});
+
+</script>
+
+</body>
+</html>
