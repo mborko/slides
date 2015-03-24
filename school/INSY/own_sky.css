@@ -1,0 +1,13 @@
+@import "css/theme/sky.css";
+
+.reveal p {
+	font-size: 32px;
+}
+
+.reveal li {
+	font-size: 32px;
+}
+
+.reveal blockquote {
+	width: 90%;
+}
