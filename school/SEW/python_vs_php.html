@@ -14,22 +14,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<link rel="stylesheet" href="css/reveal.min.css">
+<link rel="stylesheet" href="css/reveal.css">
 <link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
 <!-- For syntax highlighting -->
 <link rel="stylesheet" href="lib/css/zenburn.css">
 
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<!-- Printing and PDF exports -->
 <script>
-if( window.location.search.match( /print-pdf/gi ) ) {
-  var link = document.createElement( 'link' );
-  link.rel = 'stylesheet';
-  link.type = 'text/css';
-  link.href = 'css/print/pdf.css';
-  document.getElementsByTagName( 'head' )[0].appendChild( link );
-}
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
 </script>
+
 
 <!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -63,11 +62,12 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 <div class="reveal">
 
   <div class="slides">
-    <p style="font-size: 18px; color: lightgrey; text-align: left; position: fixed; left: -480px; top: 350px;">
-    SEW - Software Development
-    </p>
-    <p style="font-size: 18px; color: lightgrey; text-align: right; padding-top: 350px; padding-right: 480px; float: right;">
-    michael@borko.at <img src="http://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" alt="http://creativecommons.org/licenses/by-nc-sa/4.0/"/></p>
+	  <p style="font-size: 18px; color: lightgrey; text-align: left; position: fixed; left: 0px; top: 95%;">
+	                  SEW - Python vs. PHP</p>
+			                  <p style="font-size: 18px; color: lightgrey; text-align: right; position: fixed; right: 0px; top: 95%; float: right;">
+					                  michael@borko.at <img src="http://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" alt="http://creativecommons.org/licenses/by-nc-sa/4.0/"/></p>
+
+
 
     <section>
       <h2><font color="white">Python<br><small>vs.</small><br>PHP</font><h2>
@@ -105,7 +105,6 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 	<section>
 	  <h2>Strengths of PHP</h2>
-	  <br>
 	  <div align="left"><p>
 	    <ul>
 	      <li>commonly installed environment</li>
@@ -120,7 +119,6 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 	<section>
 	  <h2>Strengths of Python</h2>
-	  <br>
 	  <div align="left"><p>
 	    <ul>
 	      <li>indentation is used to mark out block structure</li>
@@ -179,7 +177,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 
     <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.min.js"></script>
+    <script src="js/reveal.js"></script>
 
     <script>
 

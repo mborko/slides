@@ -14,22 +14,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<link rel="stylesheet" href="css/reveal.min.css">
+<link rel="stylesheet" href="css/reveal.css">
 <link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
 <!-- For syntax highlighting -->
 <link rel="stylesheet" href="lib/css/zenburn.css">
 
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<!-- Printing and PDF exports -->
 <script>
-if( window.location.search.match( /print-pdf/gi ) ) {
-  var link = document.createElement( 'link' );
-  link.rel = 'stylesheet';
-  link.type = 'text/css';
-  link.href = 'css/print/pdf.css';
-  document.getElementsByTagName( 'head' )[0].appendChild( link );
-}
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
 </script>
+
 
 <!--[if lt IE 9]>
                 <script src="lib/js/html5shiv.js"></script>
@@ -62,271 +61,271 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 <body>
 <div class="reveal">
 
-  <div class="slides">
-    <p style="font-size: 18px; color: lightgrey; text-align: left; position: fixed; left: -480px; top: 350px;">
-    </p>
-    <p style="font-size: 18px; color: lightgrey; text-align: right; padding-top: 350px; padding-right: 480px; float: right;">
-    michael@borko.at <img src="http://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" alt="http://creativecommons.org/licenses/by-nc-sa/4.0/"/></p>
-    <p style="font-size: 18px; color: lightgrey; text-align: right; padding-top: 360px; padding-right: 480px; float: right;">
-    dominik.scholz@live.at <img src="http://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" alt="http://creativecommons.org/licenses/by-nc-sa/4.0/"/></p>
-    
-    <section>
-      <p class="absolute-element">
-        <figure style="position: absolute; z-index: 4; left: -125px; top: -50px;" >
-          <img style="width: 1280px; height: 720px; max-height: none; max-width: none;" 
-          src="images/scrum.JPG">
-          <figcaption>"Scrum"<br>
-          Quelle: <a href="http://upload.wikimedia.org/wikipedia/commons/1/1a/ST_vs_Gloucester_-_Match_-_23.JPG">wikimedia.org</a></figcaption>
-      </figure>
-      </p>
-      <h1 style="position: absolute; width: 1280px; height: 400px; z-index: 4; left: -170px; top: 0px; max-height: none; max-width: none;" class="absolute-element">
-        <font color="white">SCRUM</font>
-      </h1>
-    </section>
+	<div class="slides">
+		<p style="font-size: 18px; color: lightgrey; text-align: left; position: fixed; left: 0px; top: 95%;">
+		SCRUM</p>
+		<p style="font-size: 18px; color: lightgrey; text-align: right; position: fixed; right: 0px; top: 92%; float: right;">
+		michael@borko.at <img src="http://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" alt="http://creativecommons.org/licenses/by-nc-sa/4.0/"/></p>
+		<p style="font-size: 18px; color: lightgrey; text-align: right; position: fixed; right: 0px; top: 95%; float: right;">
+		dominik.scholz@live.at <img src="http://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" alt="http://creativecommons.org/licenses/by-nc-sa/4.0/"/></p>
 
-    <section>
-      <h2>Inhalt</h2>
-      <ul>
-        <li>Rollen</li>
-        <li>Meetings</li>
-        <li>Dokumente/Artefakte</li>
-        <li>Agiles Manifesto</li>
-        <li>Fixe Arbeitszeit</li>
-      </ul>
-    </section>
-    
-    <section>
-    
-      <section>
-        <h2>Rollen</h2>
-        <ul>
-          <li>Product Owner</li>
-          <li>Team</li>
-          <li>Scrummaster</li>
-          <li>Stakeholder</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2>Product Owner</h2>
-        <ul>
-          <li>Repräsentiert die Endkundenbedürfnisse</li>
-          <li>Steuert die Softwareentwicklung</li>
-          <li>Zentrale Stellung</li>
-          <li>Erstellt User Stories und Backlogs</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2>Team</h2>
-        <ul>
-          <li>Führt die Arbeiten zur Umsetzung der Anforderungen durch</li>
-          <li>Enge Zusammenarbeit von Entwicklern, Tester,..</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2>Scrummaster</h2>
-        <ul>
-          <li>Agiert als Coach</li>
-          <li>Hilft dem Team Scrum richtig einzusetzen</li>
-          <li>Arbeitet eng mit dem Team</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2>Stakeholder</h2>
-        <ul>
-          <li>Interessensträger an dem Projekt</li>
-          <li>Trifft das Team regelmäßig</li>
-        </ul>
-      </section>
-      
-    </section>
-    
-    <section>
-      <section>
-        <h2>Meetings</h2>
-        <ul>
-          <li>Daily-Scrum-Meeting</li>
-          <li>Sprintabnahme</li>
-          <li>Retrospektive</li>
-          <li>Sprintvorbereitung</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2>Daily-Scrum-Meeting</h2>
-        <ol>
-          <li>Was wurde gemacht?</li>
-          <li>Was wird heute getan?</li>
-          <li>Welche Probleme gab es?</li>
-        </ol>
-        <br /><br />
-        <ul>
-          <li>10-15 Minuten</li>
-          <li>mit Scrum Master</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2>Sprintabnahme</h2>
-        <ul>
-          <li>Konrolle der abgearbeiteten User Stories</li>
-          <li>Bugfixes/Kleine Änderungen in das Defect Backlog</li>
-          <li>Gescheiterte User Stories zurück ins Product Backlog</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2>Retrospektive</h2>
-        <ul>
-          <li>Offenlegung der Gefühle</li>
-          <li>Was ist gut?</li>
-          <li>Was ist schlecht?</li>
-          <li>Verbesserungsvorschläge</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2>Sprintvorbereitung</h2>
-        <ul>
-          <li>Sammeln der User Stories für den nächsten Sprint</li>
-          <li>Definition der Arbeitsaufteilung</li>
-          <li>Planung des Sprints</li>
-        </ul>
-      </section>
-      
-    </section>
-    
-    <section>
-      <section>
-        <h2>Dokumente</h2>
-        <ul>
-          <li>Product-Backlog</li>
-          <li>Sprint-Backlog</li>
-          <li>Defect-Backlog</li>
-          <li>techn. Documentations</li>
-          <li>Scrumban</li>
-          <li>Burndown-Chart</li>
-          <li>Scrumvertrag</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2>Product-Backlog</h2>
-        <ul>
-          <li>Enthält unabgeschlossene User Stories</li>
-          <li>Diese werden vom Product Owner erstellt</li>
-          <li>Verfeinert sich im laufe der Zeit</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2>Sprint-Backlog</h2>
-        <ol>
-          <li>Enthält User Stories des jeweiligen Sprints</li>
-          <li>Werden aus dem Product Backlog entnommen</li>
-        </ol>
-      </section>
-      
-      <section>
-        <h2>Defect-Backlog</h2>
-        <ul>
-          <li>Enthält die "kaputten" User Stories</li>
-          <li>Bugfixes</li>
-          <li>Kleine Änderungen</li>
-          <li>Fehlende Dokumentation</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2>techn. Documentations</h2>
-        <ul>
-          <li>Werden laufend angefertigt</li>
-          <li>Sortiert (Unterordner?)</li>
-          <li>Basis für die Diplomarbeit</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2>Scrumban</h2>
-        <ul>
-          <li>State der Userstories des aktuellen Sprints</li>
-        </ul>
-        <br /><br />
-        <p class="absolute-element">
-        <figure style="position: absolute; left: 180px; top: 200px; width: 700px">
-          <img style="width: 700px;" 
-          src="images/scrum_scrumban.jpg">
-          <figcaption>Scrumban<br></figcaption>
-        </figure>
-      </section>
-      
-      <section>
-        <h2>Burndown-Chart</h2>
-        <ul>
-          <li>Zeigt den Verlauf des aktuellen Sprints</li>
-          <li>Früherkennung von Zeitmangel</li>
-        </ul>
-        <br /><br />
-        <p class="absolute-element">
-        <figure style="position: absolute; z-index: 4; left: 183px; top: 220px;" >
-          <img src="images/burndown.png">
-          <figcaption>Burndown Chart<br>
-          Quelle: <a href="http://upload.wikimedia.org/wikipedia/commons/8/8c/Burn_down_chart.png">wikimedia.org</a></figcaption>
-          </figcaption>
-        </figure>
-        </p>
-      </section>
+		<section>
+			<p class="absolute-element">
+			<figure style="position: absolute; z-index: 4; left: -125px; top: -50px;" >
+				<img style="width: 1280px; height: 720px; max-height: none; max-width: none;" 
+				src="images/scrum.jpg">
+				<figcaption>"Scrum"<br>
+				Quelle: <a href="http://upload.wikimedia.org/wikipedia/commons/1/1a/ST_vs_Gloucester_-_Match_-_23.JPG">wikimedia.org</a></figcaption>
+			</figure>
+			</p>
+			<h1 style="position: absolute; width: 1280px; height: 400px; z-index: 4; left: -170px; top: 0px; max-height: none; max-width: none;" class="absolute-element">
+				<font color="white">SCRUM</font>
+			</h1>
+		</section>
 
-    </section>
-    
-    <section>
-      <h2>Agiles Manifesto</h2>
-      <ul>
-        <li>Individuen und Interaktionen mehr als Prozesse und Werkzeuge</li>
-        <li>Funktionierende Software mehr als umfassende Dokumentation</li>
-        <li>Zusammenarbeit mit dem Kunden mehr als Vertragsverhandlung</li>
-        <li>Reagieren auf Veränderung mehr als das Befolgen eines Plans</li>
-      </ul>
-    </section>
-    
-    <section>
-      <section>
-        <h2>Fixe Arbeitszeit</h2>
-        <ol>
-          <li>Wochenanzahl ab Projektstart bis Projektende - Anzahl der Ferienwochen</li>
-          <li>Anzahl der Stunden der Diplomarbeit (200) + Anzahl der Stunden fürs Jahresprojekt (160) = 360</li>
-          <li>Division von Schritt 2 durch Schritt 1 => 360/Wochen = Stunden/Woche</li>
-          <li>Einteilung in den Stundenplan</li>
-        </ol>
-      </section>
-      
-      <section>
-      <p class="absolute-element">
-      <figure style="position: absolute; z-index: 4; left: 0px; top: 0px;" >
-          <img style="max-height: none; max-width: none;" 
-          src="images/scrum_robonav.jpg">
-          <figcaption>Arbeitsstundeneinteilung - RoboNav<br></figcaption>
-        </figure>
-      </section>
-    </section>
+		<section>
+			<h2>Inhalt</h2>
+			<ul>
+				<li>Rollen</li>
+				<li>Meetings</li>
+				<li>Dokumente/Artefakte</li>
+				<li>Agiles Manifesto</li>
+				<li>Fixe Arbeitszeit</li>
+			</ul>
+		</section>
 
-    <section>
-      <h2>Literatur Quellen</h2>
-      <ol>
-        <li>Scrum , Autor: Roman Pichler, Verlag: dpunktVerlag, 1. Auflage 2008</li>
-        <li>Agile Notetaker & Scrum Reference, Axsoft, 2012</li>
-      </ol>
-    </section>
-    
-  </div>
+		<section>
+
+			<section>
+				<h2>Rollen</h2>
+				<ul>
+					<li>Product Owner</li>
+					<li>Team</li>
+					<li>Scrummaster</li>
+					<li>Stakeholder</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Product Owner</h2>
+				<ul>
+					<li>Repräsentiert die Endkundenbedürfnisse</li>
+					<li>Steuert die Softwareentwicklung</li>
+					<li>Zentrale Stellung</li>
+					<li>Erstellt User Stories und Backlogs</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Team</h2>
+				<ul>
+					<li>Führt die Arbeiten zur Umsetzung der Anforderungen durch</li>
+					<li>Enge Zusammenarbeit von Entwicklern, Tester,..</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Scrummaster</h2>
+				<ul>
+					<li>Agiert als Coach</li>
+					<li>Hilft dem Team Scrum richtig einzusetzen</li>
+					<li>Arbeitet eng mit dem Team</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Stakeholder</h2>
+				<ul>
+					<li>Interessensträger an dem Projekt</li>
+					<li>Trifft das Team regelmäßig</li>
+				</ul>
+			</section>
+
+		</section>
+
+		<section>
+			<section>
+				<h2>Meetings</h2>
+				<ul>
+					<li>Daily-Scrum-Meeting</li>
+					<li>Sprintabnahme</li>
+					<li>Retrospektive</li>
+					<li>Sprintvorbereitung</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Daily-Scrum-Meeting</h2>
+				<ol>
+					<li>Was wurde gemacht?</li>
+					<li>Was wird heute getan?</li>
+					<li>Welche Probleme gab es?</li>
+				</ol>
+				<br /><br />
+				<ul>
+					<li>10-15 Minuten</li>
+					<li>mit Scrum Master</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Sprintabnahme</h2>
+				<ul>
+					<li>Konrolle der abgearbeiteten User Stories</li>
+					<li>Bugfixes/Kleine Änderungen in das Defect Backlog</li>
+					<li>Gescheiterte User Stories zurück ins Product Backlog</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Retrospektive</h2>
+				<ul>
+					<li>Offenlegung der Gefühle</li>
+					<li>Was ist gut?</li>
+					<li>Was ist schlecht?</li>
+					<li>Verbesserungsvorschläge</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Sprintvorbereitung</h2>
+				<ul>
+					<li>Sammeln der User Stories für den nächsten Sprint</li>
+					<li>Definition der Arbeitsaufteilung</li>
+					<li>Planung des Sprints</li>
+				</ul>
+			</section>
+
+		</section>
+
+		<section>
+			<section>
+				<h2>Dokumente</h2>
+				<ul>
+					<li>Product-Backlog</li>
+					<li>Sprint-Backlog</li>
+					<li>Defect-Backlog</li>
+					<li>techn. Documentations</li>
+					<li>Scrumban</li>
+					<li>Burndown-Chart</li>
+					<li>Scrumvertrag</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Product-Backlog</h2>
+				<ul>
+					<li>Enthält unabgeschlossene User Stories</li>
+					<li>Diese werden vom Product Owner erstellt</li>
+					<li>Verfeinert sich im laufe der Zeit</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Sprint-Backlog</h2>
+				<ol>
+					<li>Enthält User Stories des jeweiligen Sprints</li>
+					<li>Werden aus dem Product Backlog entnommen</li>
+				</ol>
+			</section>
+
+			<section>
+				<h2>Defect-Backlog</h2>
+				<ul>
+					<li>Enthält die "kaputten" User Stories</li>
+					<li>Bugfixes</li>
+					<li>Kleine Änderungen</li>
+					<li>Fehlende Dokumentation</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>techn. Documentations</h2>
+				<ul>
+					<li>Werden laufend angefertigt</li>
+					<li>Sortiert (Unterordner?)</li>
+					<li>Basis für die Diplomarbeit</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Scrumban</h2>
+				<ul>
+					<li>State der Userstories des aktuellen Sprints</li>
+				</ul>
+				<br /><br />
+				<p class="absolute-element">
+				<figure style="position: absolute; left: 180px; top: 200px; width: 700px">
+					<img style="width: 700px;" 
+					src="images/scrum_scrumban.jpg">
+					<figcaption>Scrumban<br></figcaption>
+				</figure>
+			</section>
+
+			<section>
+				<h2>Burndown-Chart</h2>
+				<ul>
+					<li>Zeigt den Verlauf des aktuellen Sprints</li>
+					<li>Früherkennung von Zeitmangel</li>
+				</ul>
+				<br /><br />
+				<p class="absolute-element">
+				<figure style="position: absolute; z-index: 4; left: 183px; top: 220px;" >
+					<img src="images/burndown.png">
+					<figcaption>Burndown Chart<br>
+					Quelle: <a href="http://upload.wikimedia.org/wikipedia/commons/8/8c/Burn_down_chart.png">wikimedia.org</a></figcaption>
+					</figcaption>
+				</figure>
+				</p>
+			</section>
+
+		</section>
+
+		<section>
+			<h2>Agiles Manifesto</h2>
+			<ul>
+				<li>Individuen und Interaktionen mehr als Prozesse und Werkzeuge</li>
+				<li>Funktionierende Software mehr als umfassende Dokumentation</li>
+				<li>Zusammenarbeit mit dem Kunden mehr als Vertragsverhandlung</li>
+				<li>Reagieren auf Veränderung mehr als das Befolgen eines Plans</li>
+			</ul>
+		</section>
+
+		<section>
+			<section>
+				<h2>Fixe Arbeitszeit</h2>
+				<ol>
+					<li>Wochenanzahl ab Projektstart bis Projektende - Anzahl der Ferienwochen</li>
+					<li>Anzahl der Stunden der Diplomarbeit (200) + Anzahl der Stunden fürs Jahresprojekt (160) = 360</li>
+					<li>Division von Schritt 2 durch Schritt 1 => 360/Wochen = Stunden/Woche</li>
+					<li>Einteilung in den Stundenplan</li>
+				</ol>
+			</section>
+
+			<section>
+				<p class="absolute-element">
+				<figure style="position: absolute; z-index: 4; left: 0px; top: 0px;" >
+					<img style="max-height: none; max-width: none;" 
+					src="images/scrum_robonav.jpg">
+					<figcaption>Arbeitsstundeneinteilung - RoboNav<br></figcaption>
+				</figure>
+			</section>
+		</section>
+
+		<section>
+			<h2>Literatur Quellen</h2>
+			<ol>
+				<li>Scrum , Autor: Roman Pichler, Verlag: dpunktVerlag, 1. Auflage 2008</li>
+				<li>Agile Notetaker & Scrum Reference, Axsoft, 2012</li>
+			</ol>
+		</section>
+
+	</div>
 </div>
 
 
 <script src="lib/js/head.min.js"></script>
-<script src="js/reveal.min.js"></script>
+<script src="js/reveal.js"></script>
 
 <script>
 
