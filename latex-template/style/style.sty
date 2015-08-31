@@ -1,0 +1,215 @@
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{xcolor,graphicx,listings}
+\usepackage[german]{babel}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{etoolbox}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{xargs}
+\usepackage{textpos}
+\usepackage{utopia}
+\usepackage{listings}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=white,
+    urlcolor=blue
+}
+
+\newenvironment{console}[1]{
+\begingroup
+\setbeamercolor{block title}{bg=black,fg=blue!55!cyan}
+\setbeamercolor{block body}{bg=black,fg=green}
+\begin{block}{\texttt{#1}}
+}
+{
+\end{block}
+\endgroup
+}
+
+\newcommand{\shell}[1]{\item[\textcolor{blue}{\texttt{\$}}] \texttt{#1}}
+\newcommand{\reference}[2]{\item \textbf{#1} \\ \textcolor{blue}{\url{#2}}}
+\newcommand{\referenceS}[1]{\item \textbf{#1}}
+\newcommand{\faq}[2]{\item \textbf{#1} \\ \quad #2}
+
+\newenvironment{shellenum}{
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\lstset{
+    language=JAVA,
+    breaklines=true,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    stringstyle=\color{violet},
+    commentstyle=\color{green!60!black},
+    emph={square}, 
+    emphstyle=\color{blue}\texttt,
+    emph={[2]root,base},
+    emphstyle={[2]\color{yac}\texttt},
+    showstringspaces=false,
+    flexiblecolumns=false,
+    tabsize=2,
+    numbers=left,
+    numberstyle=\scriptsize,
+    numberblanklines=true,
+    stepnumber=1,
+    numbersep=10pt,
+    xleftmargin=15pt
+}
+
+\lstset{
+  literate={ö}{{\"o}}1
+           {ä}{{\"a}}1
+           {ü}{{\"u}}1
+           {Ö}{{\"O}}1
+           {Ä}{{\"A}}1
+           {Ü}{{\"U}}1
+           {ß}{{\"s}}1
+}
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+%\usetheme{Berlin}
+\usetheme{JuanLesPins}
+\usefonttheme{professionalfonts}
+\useinnertheme{circles}
+\useoutertheme{smoothbars}
+%\useoutertheme{tree}
+\setbeamercovered{transparent}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{1pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TIKZ STYLES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetikzlibrary{fit}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{shapes,snakes}
+\usetikzlibrary{chains}
+\usetikzlibrary{arrows,automata}
+\usetikzlibrary{plotmarks}
+
+\tikzstyle{fullcell}    = [rectangle]
+\tikzstyle{emptycell}   = [rectangle, fill=gray!20]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END TIKZ STYLES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SOME SECTION COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\sectiontitle}{}
+\newcommand{\subsectiontitle}{}
+
+\newcounter{CNTframesplit}
+\newcounter{CNTframenumber}
+
+
+\newcommand{\Section}[1]{\renewcommand{\sectiontitle}{#1} \section{#1}}
+\newcommand{\Subsection}[1]{\renewcommand{\subsectiontitle}{#1} \subsection{#1}}
+\newcommand{\slidetitle}{\sectiontitle~--~\subsectiontitle}
+
+\newcommand{\StandardFrame}[1][]
+{
+    \ifblank{#1}
+    { \begin{frame}{\slidetitle} }
+    { \begin{frame}[#1]{\slidetitle} }
+}
+
+\newcommand{\SplitableFrameInternal}[1][]
+{
+    \ifblank{#1}
+    { \begin{frame}{\slidetitle\ \Roman{CNTframesplit}} }
+    { \begin{frame}[#1]{\slidetitle\ \Roman{CNTframesplit}} }
+}
+
+\newcommand{\SplitableFrame}[1][]{\setcounter{CNTframesplit}{1} \SplitableFrameInternal[#1] \setcounter{CNTframenumber}{\value{framenumber}}}
+\newcommand{\SplitFrame}[1][]{\stepcounter{CNTframesplit} \SplitableFrameInternal[#1]}
+
+\newcommand{\VerbatimFrame}{\StandardFrame[fragile]}
+\newcommand{\VerbatimSplitableFrame}{\SplitableFrame[fragile]}
+\newcommand{\VerbatimSplitFrame}{\SplitFrame[fragile]}
+
+\newcommand{\image}[3]
+{
+\begin{figure}
+    \includegraphics[scale=#3]{#2}
+    \caption{#1}
+\end{figure}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% /SOME SECTION COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SOME TEXT COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\link}[2]{\href{#1}{#2}}
+
+\newcommand{\TT}[1]{\texttt{#1}}
+\newcommand{\TTB}[1]{\textcolor{blue}{\texttt{#1}}}
+\newcommand{\BF}[1]{\textbf{#1}}
+\newcommand{\IT}[1]{\textit{#1}}
+
+\newcommand{\Item}{\item[\textbf{!}]}
+\newcommand{\itemP}{\item[$\mathbf{+}$]}
+\newcommand{\itemN}{\item[$\mathbf{-}$]}
+\newcommand{\itemPN}{\item[$\mathbf{\pm}$]}
+%\newcommand{\itemP}{\item[\textbf{+}]}
+%\newcommand{\itemN}{\item[\textbf{--}]}
+\newcommand{\RA}{~$\Rightarrow$~}
+\newcommand{\Ra}{~$\rightarrow$~}
+
+
+\newcommand{\Mail}[1]{\href{mailto:#1}{#1}}
+
+\newcommand{\JAPI}[2]{{\small \href{#1}{#2 in der Java API}}}
+
+\newcommand{\itemSpacer}{\item[]}
+\newcommand{\NULL}{\textcolor{blue}{\TT{null}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% /SOME TEXT COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\red}[1]    {\textcolor{red}{#1}}
+\newcommand{\blue}[1]   {\textcolor{blue}{#1}}
+\newcommand{\gray}[1]   {\textcolor{gray!60}{#1}}
+
+\definecolor{lightgray}{gray}{0.65}
+\newcommand{\INDEX}[1]   {\TT{\textcolor{lightgray}{[#1]}}}
+
+\newcommand{\EfficiencyGauge}[2]
+{
+    \begin{flushright}
+        \begin{tikzpicture}
+            \node[state] (absText) at (0,0.05cm) [draw=none, left] {\textcolor{gray!5}{Abstrakt}};
+            \node[state] (effText) at (0,0.05cm) [draw=none, right of=absText, node distance=(#2)*0.5cm+1.3cm, right] {\textcolor{gray!5}{Effizient}};
+            
+            \draw[-] (0,0) -- (#2*0.5cm+0.5cm,0) [draw=gray!30, line width=1pt];
+            
+            \foreach \x in {0,...,#2}
+                \draw[-] (\x*0.5cm+0.25cm,-0.25cm)  -- (\x*0.5cm+0.25cm,0.25cm) [draw=gray!30, line width=1pt];
+            
+            %\draw (#1*0.5cm+0.25cm,0) ellipse (0.15cm and 0.3cm) [line width=0, fill=blue!40, opacity=.4];
+            \draw (#1*0.5cm+0.25cm,0) ellipse (0.15cm and 0.3cm) [line width=0, fill=yellow, opacity=.4];
+            \draw (#1*0.5cm+0.25cm,0) ellipse (0.15cm and 0.3cm) [draw=yellow, line width=1];
+            %\draw (#1*0.5cm+0.25cm,0) ellipse (0.15cm and 0.3cm) [draw=blue, line width=1];
+        \end{tikzpicture}
+    \end{flushright}
+}
+
+\newcommand{\EfficiencyFrame}[4][]
+{
+    \ifblank{#1}
+    { \begin{frame}[t]{\subsectiontitle} }
+    { \begin{frame}[t,#1]{\subsectiontitle} }
+    \vspace*{-2.1cm} \EfficiencyGauge{#2}{#3}
+    \vfill
+    #4
+    \vfill
+}
+
